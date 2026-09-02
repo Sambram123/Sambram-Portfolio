@@ -1,299 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sambram S Sangalad — AI &amp; Full-Stack Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sambram S Sangalad — AI &amp; Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="locked">
 
-<div class="intro" id="intro">
-  <div class="matrix-rain" id="matrixRain"></div>
-  <div class="intro-veil"></div>
-  <div class="intro-content">
-    <div class="intro-eyebrow">System boot // frame 0000</div>
-    <div class="intro-log" id="introLog">
-      <p>&gt; initializing <b>vision_system.core</b></p>
-      <p>&gt; loading profile: <b>sambram_s_sangalad</b></p>
-      <p>&gt; calibrating sensors ... <b>ok</b></p>
-      <p>&gt; stack: react · node · opencv · yolo</p>
-      <p>&gt; status: <b>ready</b></p>
+  <div class="intro" id="intro">
+    <div class="matrix-rain" id="matrixRain"></div>
+    <div class="intro-veil"></div>
+    <div class="intro-content">
+      <div class="intro-eyebrow">System boot // frame 0000</div>
+      <div class="intro-log" id="introLog">
+        <p>&gt; initializing <b>vision_system.core</b></p>
+        <p>&gt; loading profile: <b>Sambram_S_Sangalad</b></p>
+        <p>&gt; calibrating sensors ... <b>ok</b></p>
+        <p>&gt; stack: MERN · AI · ML · Python</p>
+        <p>&gt; status: <b>ready</b></p>
+      </div>
+      <div class="intro-name">Sambram S <span>Sangalad</span></div>
+      <button class="intro-enter" id="introEnter"><span class="dot"></span>Enter feed</button>
+      <div class="intro-hint">click anywhere or press enter</div>
     </div>
-    <div class="intro-name">Sambram S <span>Sangalad</span></div>
-    <button class="intro-enter" id="introEnter"><span class="dot"></span>Enter feed</button>
-    <div class="intro-hint">click anywhere or press enter</div>
   </div>
-</div>
 
-<div class="jp-matrix-bg" id="jpMatrixBg"></div>
-<div class="cross" id="cross"></div>
+  <div class="jp-matrix-bg" id="jpMatrixBg"></div>
+  <div class="cross" id="cross"></div>
 
-<div class="hud">
-  <span class="tl-mark"></span><span class="tr-mark"></span><span class="bl-mark"></span><span class="br-mark"></span>
-  <span class="tl">FEED_01 // ACTIVE</span>
-  <span class="tr">HUBBALLI, IN <span class="tick">●</span></span>
-  <span class="bl">SCROLL_Y: <span id="scrollY">000</span>%</span>
-  <span class="br">JCET // CSE // 2027</span>
-</div>
-
-<nav>
-  <div class="id">SSS<b>_</b>PORTFOLIO</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#status">Stack</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#log">Experience</a></li>
-    <li><a href="#edu">Credentials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="scanline" id="scanline"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-tag">Detection feed // frame 0001 &nbsp;—&nbsp; confidence <span class="conf">0.998</span></div>
-    <h1>
-      <span class="line"><span>Sambram S</span></span>
-      <span class="line"><span>Sangalad</span></span>
-    </h1>
-    <div class="hero-box">
-      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-      <p>AI &amp; full-stack developer training computers to see, and browsers to behave. Final-year CS engineer building vision systems and MERN products that ship.</p>
-    </div>
-    <div class="hero-meta">
-      <div><span>Role</span><b>AI &amp; Full-Stack Developer</b></div>
-      <div><span>Based</span><b>Hubballi, Karnataka</b></div>
-      <div><span>Status</span><b>Open to opportunities</b></div>
-      <div><span>Graduating</span><b>June 2027</b></div>
-    </div>
-    <div class="hero-floor"></div>
+  <div class="hud">
+    <span class="tl-mark"></span><span class="tr-mark"></span><span class="bl-mark"></span><span class="br-mark"></span>
+    <span class="tl">FEED_01 // ACTIVE</span>
+    <span class="tr">HUBBALLI, IN <span class="tick">●</span></span>
+    <span class="bl">SCROLL_Y: <span id="scrollY">000</span>%</span>
+    <span class="br">JCET // CSE // 2027</span>
   </div>
-  <div class="wrap">
-    <div class="scroll-cue"><div class="bar"><i></i></div>Scroll to inspect</div>
-  </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section class="block" id="about">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>About</h2>
-      <span class="idx">001 / SUBJECT PROFILE</span>
+  <nav>
+    <div class="id">SSS<b>_</b>PORTFOLIO</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#status">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#log">Experience</a></li>
+      <li><a href="#edu">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="assets/Sambram_Resume.pdf" target="_blank" rel="noopener" id="resume-btn" class="resume-btn">Resume
+          ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="scanline" id="scanline"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-tag">Detection feed // frame 0001 &nbsp;—&nbsp; confidence <span class="conf">0.998</span></div>
+      <h1>
+        <span class="line"><span>Sambram S</span></span>
+        <span class="line"><span>Sangalad</span></span>
+      </h1>
+      <div class="hero-box">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+          class="corner br"></span>
+        <p>AI &amp; full-stack developer training computers to see, and browsers to behave. Final-year CS engineer
+          building vision systems and MERN products that ship.</p>
+      </div>
+      <div class="hero-meta">
+        <div><span>Role</span><b>AI &amp; Full-Stack Developer</b></div>
+        <div><span>Based</span><b>Hubballi, Karnataka</b></div>
+        <div><span>Status</span><b>Open to opportunities</b></div>
+        <div><span>Graduating</span><b>June 2027</b></div>
+      </div>
+      <div class="hero-cta" style="margin-top:40px;opacity:0;text-align:center;">
+        <a href="assets/Sambram_Resume.pdf" target="_blank" rel="noopener" id="hero-resume-btn"
+          class="hero-resume-btn">⬇&nbsp; Download Resume</a>
+      </div>
+      <div class="hero-floor"></div>
     </div>
-    <div class="about-grid">
-      <div class="reveal">
-        <p>I'm a final-year Computer Science &amp; Engineering student at Jain College of Engineering and Technology, Hubballi, graduating in June 2027 with an 8.8 GPA. I work across the stack — React and Node on one end, OpenCV and YOLO on the other.</p>
-        <p>Most recently I've been building an industrial safety platform that watches live camera feeds for PPE compliance, and shipping full-stack products like a MERN property-rental marketplace with real payments and maps baked in.</p>
+    <div class="wrap">
+      <div class="scroll-cue">
+        <div class="bar"><i></i></div>Scroll to inspect
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>About</h2>
+        <span class="idx">001 / SUBJECT PROFILE</span>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm a final-year Computer Science &amp; Engineering student at Jain College of Engineering and Technology,
+            Hubballi, graduating in June 2027 with an 8.8 GPA. I work across the stack — React and Node on one end,
+            OpenCV and YOLO on the other.</p>
+          <p>Most recently I've been building an industrial safety platform that watches live camera feeds for PPE
+            compliance, and shipping full-stack products like a MERN property-rental marketplace with real payments and
+            maps baked in.</p>
+          <p>I thrive at the intersection of intelligent systems and polished interfaces — whether that means training a
+            YOLO model to flag a missing hard hat, or wiring Razorpay payments into a booking flow. I care deeply about
+            code that's readable, UIs that feel native, and products that actually solve problems.</p>
+          <p>When I'm not coding I'm dissecting research papers, competing in hackathons, or mentoring peers through
+            full-stack concepts. Currently open to internship and full-time opportunities starting mid-2027.</p>
+        </div>
+        <div class="tilt-wrap">
+          <div class="about-photo-wrap tilt-el">
+            <img src="assets/Profile Picture.png" alt="Sambram S Sangalad" class="about-photo" />
+            <div class="about-photo-frame">
+              <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                class="corner br"></span>
+              <span class="photo-tag">SUBJECT // SAMBRAM_S_SANGALAD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATUS / SKILLS ================= -->
+  <section class="block" id="status" style="background:var(--bg-panel);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Skills and Technologies</h2>
+        <span class="idx">002 / STACK DIAGNOSTIC</span>
+      </div>
+      <div class="status-panel">
+        <div class="status-row" data-pct="92">
+          <span class="cat">Languages</span>
+          <span class="items">JavaScript<em>/</em>Python<em>/</em>C<em>/</em>C++</span>
+          <span class="bar"><i></i></span>
+          <span class="pct">92%</span>
+        </div>
+        <div class="status-row" data-pct="95">
+          <span class="cat">Web &amp; Full-Stack</span>
+          <span
+            class="items">HTML5<em>/</em>CSS3<em>/</em>React<em>/</em>Node<em>/</em>Express<em>/</em>MongoDB<em>/</em>MySQL<em>/</em>Git</span>
+          <span class="bar"><i></i></span>
+          <span class="pct">95%</span>
+        </div>
+        <div class="status-row" data-pct="86">
+          <span class="cat">AI / ML</span>
+          <span class="items">Machine Learning<em>/</em>Deep
+            Learning<em>/</em>NumPy<em>/</em>Pandas<em>/</em>Scikit-learn</span>
+          <span class="bar"><i></i></span>
+          <span class="pct">86%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Projects</h2>
+        <span class="idx" id="proj-count-label">003 / DETECTED OBJECTS (3)</span>
+      </div>
+
+      <!-- ===== SLIDER CONTAINER ===== -->
+      <div id="projects-slider">
+        <div id="projects-track">
+
+          <!-- ===== VISIBLE PROJECTS (first 3) ===== -->
+          <div id="projects-visible">
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:var(--c-safety);">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/IndustriGuard.png" alt="Industrial AI Safety Monitoring Platform preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: SAFETY_SYSTEM &nbsp; <b>0.97</b></span>
+                </div>
+                <div>
+                  <span class="num">01 / 06</span>
+                  <h3>Industrial AI Safety Monitoring Platform</h3>
+                  <span class="period">Feb 2026 — Present</span>
+                  <p class="desc">Detects PPE compliance and employee status from live camera feeds, generates safety
+                    reports,
+                    and visualizes findings on a real-time web dashboard for factory-floor supervisors.</p>
+                  <div class="stack">
+                    <span>Python</span><span>OpenCV</span><span>YOLO</span><span>Flask</span><span>SQLite</span><span>React</span><span>Tailwind</span><span>Vite</span>
+                  </div>
+                  <div class="links">
+                    <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:var(--c-market);">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/RentEase.png" alt="RentEase property rental platform preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: MARKETPLACE &nbsp; <b>0.99</b></span>
+                </div>
+                <div>
+                  <span class="num">02 / 06</span>
+                  <h3>RentEase — Property Rental &amp; Booking</h3>
+                  <span class="period">May 2026 — Present</span>
+                  <p class="desc">Full-stack MERN rental platform for listing apartments, booking, advance rent
+                    payments, and
+                    owner/tenant dashboards, with real-time property location support.</p>
+                  <div class="stack">
+                    <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Firebase
+                      Auth</span><span>Razorpay</span><span>Google Maps</span>
+                  </div>
+                  <div class="links">
+                    <a href="https://rent-ease-property-rental-booking-p.vercel.app/" target="_blank"
+                      rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:var(--c-storage);">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/FileSphere.png" alt="Cloud-Based File Management System preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: STORAGE &nbsp; <b>0.95</b></span>
+                </div>
+                <div>
+                  <span class="num">03 / 06</span>
+                  <h3>Cloud-Based File Management System</h3>
+                  <span class="period">May 2026</span>
+                  <p class="desc">Responsive web app with secure authentication and full file management — uploads for
+                    PDF,
+                    DOC, images, audio and video — with real-time previews and cross-device access.</p>
+                  <div class="stack">
+                    <span>React 18</span><span>Firebase</span><span>Material
+                      UI</span><span>Cloudinary</span><span>Context
+                      API</span>
+                  </div>
+                  <div class="links">
+                    <a href="https://notes-app-ec71c.web.app/" target="_blank" rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /#projects-visible -->
+
+          <!-- ===== EXTRA PROJECTS (hidden initially) ===== -->
+          <div id="projects-extra" aria-hidden="true">
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:#F7C948;">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/project_placeholder.jpg" alt="TrustLedger escrow platform preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: FINTECH &nbsp; <b>0.96</b></span>
+                </div>
+                <div>
+                  <span class="num">04 / 06</span>
+                  <h3>TrustLedger — AI-Powered Escrow Platform</h3>
+                  <span class="period">Mar 2026 — Apr 2026</span>
+                  <p class="desc">Milestone-based escrow system for freelance transactions — AI auto-verifies
+                    deliverables
+                    and releases funds. Built during JCET Hackathon, winning 2nd place.</p>
+                  <div class="stack">
+                    <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span><span>Socket.io</span><span>MERN</span>
+                  </div>
+                  <div class="links">
+                    <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:#FF4D6D;">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/project_placeholder.jpg" alt="Smart Traffic Analysis System preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: VISION &nbsp; <b>0.93</b></span>
+                </div>
+                <div>
+                  <span class="num">05 / 06</span>
+                  <h3>Smart Traffic Analysis System</h3>
+                  <span class="period">Jan 2026 — Feb 2026</span>
+                  <p class="desc">Real-time traffic density estimation and vehicle count using YOLO and OpenCV on CCTV
+                    feeds.
+                    Generates heatmaps and congestion alerts for urban traffic management centers.</p>
+                  <div class="stack">
+                    <span>Python</span><span>YOLOv8</span><span>OpenCV</span><span>NumPy</span><span>FastAPI</span><span>React</span>
+                  </div>
+                  <div class="links">
+                    <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tilt-wrap">
+              <div class="proj" style="--class-color:#38BDF8;">
+                <div class="frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span
+                    class="corner br"></span>
+                  <img src="assets/project_placeholder.jpg" alt="DevCollab real-time code editor preview"
+                    class="proj-placeholder-img" />
+                  <span class="tag">CLASS: COLLABORATION &nbsp; <b>0.91</b></span>
+                </div>
+                <div>
+                  <span class="num">06 / 06</span>
+                  <h3>DevCollab — Real-Time Code Editor</h3>
+                  <span class="period">Nov 2025 — Dec 2025</span>
+                  <p class="desc">Collaborative code editor with real-time multi-cursor sync, chat, and live preview.
+                    Supports 15+ languages via Monaco Editor with JWT-secured room management.</p>
+                  <div class="stack">
+                    <span>React</span><span>Node.js</span><span>Socket.io</span><span>Monaco
+                      Editor</span><span>JWT</span><span>Redis</span>
+                  </div>
+                  <div class="links">
+                    <a href="#" target="_blank" rel="noopener">Live demo ↗</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /#projects-extra -->
+
+        </div><!-- /#projects-track -->
+      </div><!-- /#projects-slider -->
+
+      <!-- ===== SHOW MORE BUTTON (outside slider) ===== -->
+      <div class="proj-show-more-wrap">
+        <button class="proj-show-more-btn" id="projShowMoreBtn" aria-expanded="false">
+          <span class="dot"></span>
+          <span class="btn-label">Show more — 3 more objects detected</span>
+          <svg class="btn-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE LOG ================= -->
+  <section class="block" id="log" style="background:var(--bg-panel);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Experience Log</h2>
+        <span class="idx">004 / ACTIVITY HISTORY</span>
+      </div>
+      <div class="log reveal">
+        <div class="log-entry">
+          <span class="ts">May 2026 — Jun 2026</span>
+          <h3>Data Analytics Job Simulation</h3>
+          <span class="org">Tata Group — Tata iQ Financial Services</span>
+          <p>Applied AI-powered data analytics and exploratory data analysis to assess data quality, identify risk
+            indicators, and generate predictive insights using GenAI tools.</p>
+          <p>Built a predictive modeling framework to evaluate customer delinquency risk, with structured model logic,
+            evaluation criteria, and data-driven recommendations.</p>
+          <a class="cert"
+            href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_6a08925f41457db03b472dcf_1781339629611_completion_certificate.pdf"
+            target="_blank" rel="noopener">View certificate ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION + CERTS ================= -->
+  <section class="block" id="edu">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Education and Certifications</h2>
+        <span class="idx">005 / VERIFIED RECORDS</span>
       </div>
       <div class="tilt-wrap">
-        <div class="about-stats tilt-el">
-          <div><b>8.8</b><span>GPA / 10.0</span></div>
-          <div><b>3</b><span>Shipped projects</span></div>
-          <div><b>2nd</b><span>Place, JCET Hackathon</span></div>
-          <div><b>2027</b><span>Graduation</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="split tilt-el">
+          <div class="edu-card">
+            <h3>B.E. Computer Science &amp; Engineering</h3>
+            <span class="school">Jain College of Engineering and Technology, Hubli</span>
+            <div class="row"><span>GPA</span><span>8.8 / 10.0</span></div>
+            <div class="row"><span>Graduating</span><span>June 2027</span></div>
+            <div class="row"><span>Status</span><span>Final year</span></div>
+          </div>
+          <div>
+            <ul class="cert-list">
+              <li>
+                <div class="cert-top">
+                  <div>
+                    <div class="name">Complete AI, Machine Learning &amp; Data Science Bootcamp</div>
+                    <div class="cert-badge-row">
+                      <span class="badge">Certified</span>
+                      <a href="#" target="_blank" rel="noopener" class="cert-link">View certificate ↗</a>
+                    </div>
+                  </div>
+                  <span class="when">Oct 2025 – Feb 2026</span>
+                </div>
+              </li>
+              <li>
+                <div class="cert-top">
+                  <div>
+                    <div class="name">Generative AI Certification — NPTEL (IIT Collaboration)</div>
+                    <div class="cert-badge-row">
+                      <span class="badge">Certified</span>
+                      <a href="#" target="_blank" rel="noopener" class="cert-link">View certificate ↗</a>
+                    </div>
+                  </div>
+                  <span class="when">Aug 2025 – Oct 2025</span>
+                </div>
+              </li>
+              <li>
+                <div class="cert-top">
+                  <div>
+                    <div class="name">Full Stack Web Development Certification</div>
+                    <div class="cert-badge-row">
+                      <span class="badge">Certified</span>
+                      <a href="#" target="_blank" rel="noopener" class="cert-link">View certificate ↗</a>
+                    </div>
+                  </div>
+                  <span class="when">Jan 2025 – Aug 2025</span>
+                </div>
+              </li>
+              <li>
+                <div class="cert-top">
+                  <div>
+                    <div class="name">2nd Place, JCET Hackathon — "TrustLedger," an AI-powered milestone-based escrow
+                      platform for freelance transactions (MERN, PostgreSQL, Prisma, Socket.io)</div>
+                    <div class="cert-badge-row">
+                      <span class="badge">Award</span>
+                      <a href="#" target="_blank" rel="noopener" class="cert-link">View details ↗</a>
+                    </div>
+                  </div>
+                  <span class="when">JCET</span>
+                </div>
 
-<!-- ================= STATUS / SKILLS ================= -->
-<section class="block" id="status" style="background:var(--bg-panel);">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>System Status</h2>
-      <span class="idx">002 / STACK DIAGNOSTIC</span>
-    </div>
-    <div class="status-panel">
-      <div class="status-row" data-pct="92">
-        <span class="cat">Languages</span>
-        <span class="items">JavaScript<em>/</em>Python<em>/</em>C<em>/</em>C++</span>
-        <span class="bar"><i></i></span>
-        <span class="pct">92%</span>
-      </div>
-      <div class="status-row" data-pct="95">
-        <span class="cat">Web &amp; Full-Stack</span>
-        <span class="items">HTML5<em>/</em>CSS3<em>/</em>React<em>/</em>Node<em>/</em>Express<em>/</em>MongoDB<em>/</em>MySQL<em>/</em>Git</span>
-        <span class="bar"><i></i></span>
-        <span class="pct">95%</span>
-      </div>
-      <div class="status-row" data-pct="86">
-        <span class="cat">AI / ML</span>
-        <span class="items">Machine Learning<em>/</em>Deep Learning<em>/</em>NumPy<em>/</em>Pandas<em>/</em>Scikit-learn</span>
-        <span class="bar"><i></i></span>
-        <span class="pct">86%</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section class="block" id="projects">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Projects</h2>
-      <span class="idx">003 / DETECTED OBJECTS (3)</span>
-    </div>
-
-    <div class="tilt-wrap">
-      <div class="proj" style="--class-color:var(--c-safety);">
-        <div class="frame">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="tag">CLASS: SAFETY_SYSTEM &nbsp; <b>0.97</b></span>
-        </div>
-        <div>
-          <span class="num">01 / 03</span>
-          <h3>Industrial AI Safety Monitoring Platform</h3>
-          <span class="period">Feb 2026 — Present</span>
-          <p class="desc">Detects PPE compliance and employee status from live camera feeds, generates safety reports, and visualizes findings on a real-time web dashboard for factory-floor supervisors.</p>
-          <div class="stack">
-            <span>Python</span><span>OpenCV</span><span>YOLO</span><span>Flask</span><span>SQLite</span><span>React</span><span>Tailwind</span><span>Vite</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="tilt-wrap">
-      <div class="proj" style="--class-color:var(--c-market);">
-        <div class="frame">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="tag">CLASS: MARKETPLACE &nbsp; <b>0.99</b></span>
-        </div>
-        <div>
-          <span class="num">02 / 03</span>
-          <h3>RentEase — Property Rental &amp; Booking</h3>
-          <span class="period">May 2026 — Present</span>
-          <p class="desc">Full-stack MERN rental platform for listing apartments, booking, advance rent payments, and owner/tenant dashboards, with real-time property location support.</p>
-          <div class="stack">
-            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Firebase Auth</span><span>Razorpay</span><span>Google Maps</span>
-          </div>
-          <div class="links"><a href="https://rent-ease-property-rental-booking-p.vercel.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
-        </div>
+  <!-- ================= CONTACT ================= -->
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 style="text-transform:none;font-size:inherit;font-family:var(--mono);font-weight:400;letter-spacing:.1em;">
+          006 / OUTPUT CHANNELS</h2>
+      </div>
+      <h2 class="title reveal"><a href="mailto:sambramss7@gmail.com">Let's build<br>something.</a></h2>
+      <div class="channels reveal">
+        <a href="mailto:sambramss7@gmail.com">
+          <svg class="ch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <span>Email</span><b>sambramss7@gmail.com</b>
+        </a>
+        <a href="tel:+919449885317">
+          <svg class="ch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
+          </svg>
+          <span>Phone</span><b>+91 94498 85317</b>
+        </a>
+        <a href="https://github.com/Sambram123" target="_blank" rel="noopener">
+          <svg class="ch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+          <span>GitHub</span><b>@Sambram123</b>
+        </a>
+        <a href="https://www.linkedin.com/in/sambram-sangalad-1b514a2a5/" target="_blank" rel="noopener">
+          <svg class="ch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          <span>LinkedIn</span><b>sambram-sangalad</b>
+        </a>
       </div>
     </div>
+  </section>
 
-    <div class="tilt-wrap">
-      <div class="proj" style="--class-color:var(--c-storage);">
-        <div class="frame">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <span class="tag">CLASS: STORAGE &nbsp; <b>0.95</b></span>
-        </div>
-        <div>
-          <span class="num">03 / 03</span>
-          <h3>Cloud-Based File Management System</h3>
-          <span class="period">May 2026</span>
-          <p class="desc">Responsive web app with secure authentication and full file management — uploads for PDF, DOC, images, audio and video — with real-time previews and cross-device access.</p>
-          <div class="stack">
-            <span>React 18</span><span>Firebase</span><span>Material UI</span><span>Cloudinary</span><span>Context API</span>
-          </div>
-          <div class="links"><a href="https://notes-app-ec71c.web.app/" target="_blank" rel="noopener">Live demo ↗</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  <footer>
+    <span>© 2026 Sambram S Sangalad</span>
+    <span>Built with intent, not templates</span>
+  </footer>
 
-<!-- ================= EXPERIENCE LOG ================= -->
-<section class="block" id="log" style="background:var(--bg-panel);">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Experience Log</h2>
-      <span class="idx">004 / ACTIVITY HISTORY</span>
-    </div>
-    <div class="log reveal">
-      <div class="log-entry">
-        <span class="ts">May 2026 — Jun 2026</span>
-        <h3>Data Analytics Job Simulation</h3>
-        <span class="org">Tata Group — Tata iQ Financial Services</span>
-        <p>Applied AI-powered data analytics and exploratory data analysis to assess data quality, identify risk indicators, and generate predictive insights using GenAI tools.</p>
-        <p>Built a predictive modeling framework to evaluate customer delinquency risk, with structured model logic, evaluation criteria, and data-driven recommendations.</p>
-        <a class="cert" href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_6a08925f41457db03b472dcf_1781339629611_completion_certificate.pdf" target="_blank" rel="noopener">View certificate ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= EDUCATION + CERTS ================= -->
-<section class="block" id="edu">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Credentials</h2>
-      <span class="idx">005 / VERIFIED RECORDS</span>
-    </div>
-    <div class="tilt-wrap">
-      <div class="split tilt-el">
-        <div class="edu-card">
-          <h3>B.E. Computer Science &amp; Engineering</h3>
-          <span class="school">Jain College of Engineering and Technology, Hubli</span>
-          <div class="row"><span>GPA</span><span>8.8 / 10.0</span></div>
-          <div class="row"><span>Graduating</span><span>June 2027</span></div>
-          <div class="row"><span>Status</span><span>Final year</span></div>
-        </div>
-        <div>
-          <ul class="cert-list">
-            <li>
-              <div>
-                <div class="name">Complete AI, Machine Learning &amp; Data Science Bootcamp</div>
-                <span class="badge">Certified</span>
-              </div>
-              <span class="when">Oct 2025 – Feb 2026</span>
-            </li>
-            <li>
-              <div>
-                <div class="name">Generative AI Certification — NPTEL (IIT Collaboration)</div>
-                <span class="badge">Certified</span>
-              </div>
-              <span class="when">Aug 2025 – Oct 2025</span>
-            </li>
-            <li>
-              <div>
-                <div class="name">Full Stack Web Development Certification</div>
-                <span class="badge">Certified</span>
-              </div>
-              <span class="when">Jan 2025 – Aug 2025</span>
-            </li>
-            <li>
-              <div>
-                <div class="name">2nd Place, JCET Hackathon — "TrustLedger," an AI-powered milestone-based escrow platform for freelance transactions (MERN, PostgreSQL, Prisma, Socket.io)</div>
-                <span class="badge">Award</span>
-              </div>
-              <span class="when">JCET</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="block contact" id="contact">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2 style="text-transform:none;font-size:inherit;font-family:var(--mono);font-weight:400;letter-spacing:.1em;">006 / OUTPUT CHANNELS</h2>
-    </div>
-    <h2 class="title reveal"><a href="mailto:sambramss7@gmail.com">Let's build<br>something.</a></h2>
-    <div class="channels reveal">
-      <a href="mailto:sambramss7@gmail.com"><span>Email</span><b>sambramss7@gmail.com</b></a>
-      <a href="tel:+919449885317"><span>Phone</span><b>+91 94498 85317</b></a>
-      <a href="https://github.com/Sambram123" target="_blank" rel="noopener"><span>GitHub</span><b>@Sambram123</b></a>
-      <a href="https://www.linkedin.com/in/sambram-sangalad-1b514a2a5/" target="_blank" rel="noopener"><span>LinkedIn</span><b>sambram-sangalad</b></a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span>© 2026 Sambram S Sangalad</span>
-  <span>Built with intent, not templates</span>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
