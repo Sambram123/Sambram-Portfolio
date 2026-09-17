@@ -79,19 +79,16 @@ window.addEventListener('keydown', e => {
 const KANA_POOL = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポ';
 const BG_WORDS = ['SAMBRAM SANGALAD', 'CODING', 'MERN', 'AI', 'ML', 'REACT', 'PYTHON'];
 
-const JP_HOLD_MS = 900; // how long a character stays enlarged/shiny after the mouse moves off it, before fading back
+const JP_HOLD_MS = 200; // how long the highlight lingers after cursor leaves the cell
 const jpRevertTimers = new WeakMap();
 let jpGridSpans = [];
 let jpGridCols = 0;
-let jpGridCell = 44;
+let jpGridRows = 0;
 let jpCurrentIdx = -1;
 
 function jpActivate(span) {
   const pending = jpRevertTimers.get(span);
-  if (pending) {
-    clearTimeout(pending);
-    jpRevertTimers.delete(span);
-  }
+  if (pending) { clearTimeout(pending); jpRevertTimers.delete(span); }
   span.classList.add('hot');
 }
 
@@ -114,7 +111,7 @@ function buildJpMatrixBg() {
   const frag = document.createDocumentFragment();
   jpGridSpans = [];
   jpGridCols = cols;
-  jpGridCell = cell;
+  jpGridRows = rows;
   for (let i = 0; i < total; i++) {
     const span = document.createElement('span');
     const roll = Math.random();
@@ -141,23 +138,25 @@ window.addEventListener('resize', () => {
   window.__jpBgResizeT = setTimeout(buildJpMatrixBg, 300);
 });
 
-/* Work out which grid cell sits under the cursor directly from coordinates
-   (not document.elementFromPoint) — the foreground content sections legitimately
-   stack above this background layer, so a real hit-test would rarely reach it. */
+/* Highlight the single background cell sitting under the crosshair cursor.
+   Cell dimensions are derived from the element's live bounding rect so they
+   match the actual CSS grid layout (auto-fill minmax stretches cols wider
+   than the nominal 44px, causing an offset if we use a hardcoded value). */
 function jpHandleMove(clientX, clientY) {
   const el = document.getElementById('jpMatrixBg');
   if (!el || !jpGridSpans.length) return;
   const rect = el.getBoundingClientRect();
-  const col = Math.floor((clientX - rect.left) / jpGridCell);
-  const row = Math.floor((clientY - rect.top) / jpGridCell);
+  const cellW = rect.width  / jpGridCols;
+  const cellH = rect.height / jpGridRows;
+  const col = Math.floor((clientX - rect.left) / cellW);
+  const row = Math.floor((clientY - rect.top)  / cellH);
   const idx = row * jpGridCols + col;
-  const valid = col >= 0 && col < jpGridCols && idx >= 0 && idx < jpGridSpans.length;
+  const valid = col >= 0 && col < jpGridCols && row >= 0 && row < jpGridRows && idx >= 0 && idx < jpGridSpans.length;
   const newIdx = valid ? idx : -1;
-
   if (newIdx === jpCurrentIdx) return;
   if (jpCurrentIdx !== -1) {
-    const prevSpan = jpGridSpans[jpCurrentIdx];
-    if (prevSpan) jpScheduleRevert(prevSpan);
+    const prev = jpGridSpans[jpCurrentIdx];
+    if (prev) jpScheduleRevert(prev);
   }
   jpCurrentIdx = newIdx;
   if (newIdx !== -1) jpActivate(jpGridSpans[newIdx]);
@@ -166,23 +165,21 @@ function jpHandleMove(clientX, clientY) {
 let jpMovePending = false;
 let jpLastX = -9999, jpLastY = -9999;
 window.addEventListener('mousemove', e => {
-  jpLastX = e.clientX;
-  jpLastY = e.clientY;
+  jpLastX = e.clientX; jpLastY = e.clientY;
   if (!jpMovePending) {
     jpMovePending = true;
-    requestAnimationFrame(() => {
-      jpHandleMove(jpLastX, jpLastY);
-      jpMovePending = false;
-    });
+    requestAnimationFrame(() => { jpHandleMove(jpLastX, jpLastY); jpMovePending = false; });
   }
 });
 document.addEventListener('mouseleave', () => {
   if (jpCurrentIdx !== -1) {
-    const prevSpan = jpGridSpans[jpCurrentIdx];
-    if (prevSpan) jpScheduleRevert(prevSpan);
+    const prev = jpGridSpans[jpCurrentIdx];
+    if (prev) jpScheduleRevert(prev);
     jpCurrentIdx = -1;
   }
 });
+
+
 
 /* ---------------- crosshair cursor ---------------- */
 const cross = document.getElementById('cross');
@@ -417,3 +414,26 @@ gsap.utils.toArray('.about-photo-wrap, .split').forEach(el => {
     }
   );
 });
+
+/* ---------------- light / dark mode toggle ---------------- */
+(function () {
+  const toggle = document.getElementById('toggle');
+  if (!toggle) return;
+
+  /* Restore saved preference (checked = light mode) */
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.body.classList.add('light');
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      document.body.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.classList.remove('light');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+})();

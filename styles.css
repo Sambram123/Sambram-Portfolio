@@ -26,6 +26,37 @@
   --mono: 'JetBrains Mono', monospace;
 }
 
+/* ---------- light mode overrides ---------- */
+body.light{
+  --bg: #F4F3EF;
+  --bg-panel: #E9E8E3;
+  --ink: #0D0D10;
+  --ink-soft: #5A5A60;
+  --ink-faint: #9A9AA0;
+  --line: #D4D3CE;
+  --line-strong: #BBBAB5;
+  --signal: #3355EE;
+  --signal-dim: rgba(51,85,238,0.12);
+}
+body.light .jp-matrix-bg{
+  color: rgba(0,100,30,.10);
+}
+body.light .jp-matrix-bg span{
+  text-shadow: 0 0 6px rgba(0,130,40,.15);
+}
+body.light .jp-matrix-bg span.hot{
+  color: #003a14;
+  text-shadow: 0 0 10px rgba(0,160,60,.75), 0 0 22px rgba(0,160,60,.35);
+}
+@keyframes kanaPulseLight{
+  0%,100%{ color:rgba(0,100,30,.12); text-shadow:0 0 5px rgba(0,130,40,.18); }
+  45%{ color:rgba(0,130,40,.65); text-shadow:0 0 12px rgba(0,130,40,.5), 0 0 18px rgba(0,130,40,.3); }
+  70%{ color:#003a14; text-shadow:0 0 14px #003a14, 0 0 22px rgba(0,130,40,.6); }
+}
+body.light .jp-matrix-bg span.pulse{
+  animation-name: kanaPulseLight;
+}
+
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
@@ -97,6 +128,65 @@ nav a.resume-btn{
 nav a.resume-btn::after{ display:none; }
 nav a.resume-btn:hover{ background:var(--signal); color:#0A0A0C; border-color:var(--signal); }
 @media (max-width:760px){ nav ul{ display:none; } nav{ padding:18px 20px; } }
+
+/* ---------- theme switch (Uiverse.io / elijahgummer) ---------- */
+.switch{
+  position:relative; flex-shrink:0;
+  width:110px; height:30px;
+  box-sizing:border-box; padding:2px;
+  background:#0d0d0d;
+  border-radius:5px;
+  box-shadow:inset 0 1px 1px 1px rgba(0,0,0,.5), 0 1px 0 0 rgba(255,255,255,.1);
+}
+body.light .switch{ background:#d0cfc9; box-shadow:inset 0 1px 1px 1px rgba(0,0,0,.15), 0 1px 0 0 rgba(255,255,255,.5); }
+.switch input[type="checkbox"]{
+  position:absolute; z-index:1; width:100%; height:100%; opacity:0; cursor:pointer;
+}
+.switch input[type="checkbox"] + label{
+  position:relative; display:block; left:0;
+  width:50%; height:100%;
+  background:#1b1c1c;
+  border-radius:3px;
+  box-shadow:inset 0 1px 0 0 rgba(255,255,255,.1);
+  transition:all .5s ease-in-out;
+}
+body.light .switch input[type="checkbox"] + label{ background:#e8e7e2; }
+.switch input[type="checkbox"] + label::before{
+  content:""; display:inline-block;
+  width:4px; height:4px; margin-left:8px;
+  background:#fff; border-radius:50%; vertical-align:middle;
+  box-shadow:0 0 4px 2px rgba(165,15,15,.9), 0 0 2px 1px rgba(165,15,15,.9);
+  transition:all .5s ease-in-out;
+}
+.switch input[type="checkbox"] + label::after{
+  content:""; display:inline-block; width:0; height:100%; vertical-align:middle;
+}
+.switch input[type="checkbox"] + label i{
+  display:block; position:absolute;
+  top:50%; left:50%;
+  width:2px; height:14px;
+  margin-top:-7px; margin-left:-1px;
+  border-radius:2px;
+  background:#0d0d0d;
+  box-shadow:0 1px 0 0 rgba(255,255,255,.3);
+}
+body.light .switch input[type="checkbox"] + label i{ background:#b0afa9; }
+.switch input[type="checkbox"] + label i::before,
+.switch input[type="checkbox"] + label i::after{
+  content:""; display:block; position:absolute;
+  width:100%; height:100%;
+  border-radius:2px; background:#0d0d0d;
+  box-shadow:0 1px 0 0 rgba(255,255,255,.3);
+}
+body.light .switch input[type="checkbox"] + label i::before,
+body.light .switch input[type="checkbox"] + label i::after{ background:#b0afa9; }
+.switch input[type="checkbox"] + label i::before{ left:-5px; }
+.switch input[type="checkbox"] + label i::after{ left:5px; }
+.switch input[type="checkbox"]:checked + label{ left:50%; }
+.switch input[type="checkbox"]:checked + label::before{
+  box-shadow:0 0 4px 2px rgba(15,165,70,.9), 0 0 2px 1px rgba(15,165,70,.9);
+}
+
 
 section{ position:relative; width:100%; z-index:1; }
 .wrap{ max-width:1160px; margin:0 auto; padding:0 40px; position:relative; }
@@ -497,9 +587,7 @@ body.locked{ overflow:hidden; height:100vh; }
 .jp-matrix-bg span{
   text-align:center; user-select:none;
   text-shadow:0 0 6px rgba(0,255,65,.22);
-  transition:transform .55s ease, color .55s ease, text-shadow .55s ease;
   pointer-events:none;
-  will-change:transform;
 }
 .jp-matrix-bg span.word{
   font-size:11px; letter-spacing:.04em; color:rgba(0,255,65,.18);
@@ -508,13 +596,11 @@ body.locked{ overflow:hidden; height:100vh; }
   animation:kanaPulse var(--dur,4s) ease-in-out infinite var(--delay,0s);
 }
 .jp-matrix-bg span.hot{
-  transition:transform .15s ease-out, color .15s ease-out, text-shadow .15s ease-out;
-  transform:scale(1.9);
   color:#EAFFF0;
-  text-shadow:0 0 18px rgba(0,255,65,.9), 0 0 30px #EAFFF0;
-  z-index:1;
+  text-shadow:0 0 10px rgba(0,255,65,.95), 0 0 22px rgba(0,255,65,.55);
   animation-play-state:paused;
 }
+
 @keyframes kanaPulse{
   0%,100%{ color:rgba(0,255,65,.18); text-shadow:0 0 5px rgba(0,255,65,.25); }
   45%{ color:rgba(0,255,65,.85); text-shadow:0 0 12px rgba(0,255,65,.65), 0 0 18px rgba(0,255,65,.35); }
